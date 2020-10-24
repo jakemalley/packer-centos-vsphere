@@ -1,0 +1,5 @@
+build/
+variables/
+output-*-iso/
+packer_cache/
+.vagrant/
