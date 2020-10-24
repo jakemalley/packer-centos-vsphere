@@ -1,5 +1,10 @@
+
+locals {
+  iso_url = "${var.install_boot_iso == "" ? format("%s%s", var.install_repo,"images/boot.iso") : var.install_boot_iso}"
+}
+
 # Build using ISO
-source "vsphere-iso" "source-rhel7" {
+source "vsphere-iso" "rhel7" {
   # vCenter Details
   vcenter_server      = "${var.vcenter_server}"
   username            = "${var.vcenter_username}"
@@ -36,7 +41,7 @@ source "vsphere-iso" "source-rhel7" {
   ssh_username  = "${var.ssh_username}"
 
   # Boot ISO
-  iso_url              = "${var.install_boot_iso}"
+  iso_url              = "${local.iso_url}"
   iso_checksum         = "${var.install_boot_iso_checksum}"
 
   boot_wait            = "10s"

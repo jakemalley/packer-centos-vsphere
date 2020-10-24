@@ -70,6 +70,7 @@ variable "install_repo" {
 
 variable "install_boot_iso" {
   type    = string
+  default = ""
 }
 
 variable "install_boot_iso_checksum" {

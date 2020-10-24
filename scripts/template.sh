@@ -79,6 +79,7 @@ fi
 /bin/sed -i '/^[ \t]*\(HWADDR\|UUID\)/d' /etc/sysconfig/network-scripts/ifcfg-eth*
 /bin/rm -f /etc/udev/rules.d/70-persistent-net.rules
 /bin/rm -f /etc/dhcp/dhclient-exit-hooks
+/bin/rm -f /etc/machine-id
 
 echo "localhost" > /etc/hostname
 echo "127.0.0.1 localhost localhost.localdomain localhost4 localhost4.localdomain4" > /etc/hosts
