@@ -38,6 +38,11 @@ variable "vm_name" {
   default = "packer-template"
 }
 
+variable "vm_guest_os_type" {
+  type    = string
+  default = "rhel7_64Guest"
+}
+
 variable "vm_vcpus" {
   type    = string
   default = "2"
@@ -81,7 +86,7 @@ variable "install_boot_iso_checksum" {
 # Kickstart / Automated Install
 variable "install_ks" {
   type    = string
-  default = "kickstart.el7s.cfg"
+  default = "kickstart.cfg"
 }
 
 # SSH Information

@@ -4,7 +4,7 @@ locals {
 }
 
 # Build using ISO
-source "vsphere-iso" "rhel7" {
+source "vsphere-iso" "rhel" {
   # vCenter Details
   vcenter_server      = "${var.vcenter_server}"
   username            = "${var.vcenter_username}"
@@ -17,7 +17,7 @@ source "vsphere-iso" "rhel7" {
 
   # VM Details
   vm_name              = "${var.vm_name}"
-  guest_os_type        = "rhel7_64Guest"
+  guest_os_type        = "${var.vm_guest_os_type}"
   CPUs                 = "${var.vm_vcpus}"
   CPU_hot_plug         = true
   RAM                  = "${var.vm_memory}"
