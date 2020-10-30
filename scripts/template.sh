@@ -71,12 +71,11 @@ fi
 /bin/rm -f /var/log/*.gz
 /bin/rm -rf /var/log/anaconda
 /bin/rm -rf /root/.ssh
-/bin/rm -f /root/bonemeal-installer.log
 /bin/rm -f /root/anaconda-ks.cfg
 /bin/rm -f /root/original-ks.cfg
 /bin/rm -f /root/.bash_history
 
-/bin/sed -i '/^[ \t]*\(HWADDR\|UUID\)/d' /etc/sysconfig/network-scripts/ifcfg-eth*
+/bin/sed -i '/^[ \t]*\(HWADDR\|UUID\)/d' /etc/sysconfig/network-scripts/ifcfg-e*
 /bin/rm -f /etc/udev/rules.d/70-persistent-net.rules
 /bin/rm -f /etc/dhcp/dhclient-exit-hooks
 /bin/rm -f /etc/machine-id
